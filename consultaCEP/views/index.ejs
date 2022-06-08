@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Consulta CEP </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>API de consulta de CEP:</h1>
+    <% if (typeof erro !== "undefined") { %>
+      <p style="color: red; font-weight: 200;"> <%= erro %> </p>
+      <% } %> 
+
+      </div> 
+    <form action="/" method="GET">
+      <label for="">Digite o cep para consulta:</label>
+      <input type="text" name="cepConsulta">
+      <button type="submit">Consultar</button>
+    </form>
+
+    <% if(typeof detalhesCep !== "undefined"){ %>
+      <div>
+        <h2>Detalhes do cep: <%= detalhesCep.cep %> </h2>
+        <p>Rua: <%= detalhesCep.street %> </p>
+        <p>Bairro: <%= detalhesCep.neighborhood %>  </p>
+        <p><%= detalhesCep.city %> - <%= detalhesCep.state %>  </p>
+      </div>
+      <% } %> 
+
+  </body>
+</html>
